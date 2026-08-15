@@ -6,7 +6,7 @@ func encrypt_rot13(s string) string {
 		if r[i] >= 'a' && r[i] <= 'z' {
 			r [i] = 'a' + ( r[i] - 'a'  + 13 ) % 26
 }	
-	if r[i] >= 'A' && r[i] <= 'Z' {
+	else if r[i] >= 'A' && r[i] <= 'Z' {
 			r [i] = 'A' + ( r[i] - 'A'  + 13 ) % 26
 	} 
 }
