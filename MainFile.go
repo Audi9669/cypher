@@ -42,7 +42,7 @@ func main() {
 		fmt.Println("Unknow Cipher, please choose from list")
 	   return 
 	}	
-	fmt.Println("Result:" result)
+	fmt.Println("Result:" ,result)
 
 }
 
@@ -57,10 +57,10 @@ func getInput() (toEncrypt bool, encoding string, message string){
 	choice := strings.TrimSpace(input)
 		if choice == "1" {
 			fmt.Println("You chose to encrypt!")
-			func encrypt()
+			
 		} else if choice == "2" {
 			fmt.Println("You chose to decrypt!")
-			func decrypt()
+			
 		} else {
 			fmt.Println("Invalid choice.")
 		} 
@@ -74,13 +74,13 @@ func getInput() (toEncrypt bool, encoding string, message string){
 	cypherchoice := strings.TrimSpace(input)
 		if cypherchoice == "1" {
 			fmt.Println("You chose ROT13")
-			func rot13()
+			
 		} else if cypherchoice == "2" {
 			fmt.Println("You chose Reverse")
-			func reverse()
+			
 		} else if cypherchoice == "3" {
 			fmt.Println("You chose Morse")
-			func morse()
+			
 		} else {
 			fmt.Println("Invalid choice.")
 		}
@@ -119,5 +119,46 @@ func decrypt_MorseCode(s string) string {
 }
 
 
+// Encrypt the message with rot13
+func encrypt_rot13(s string) string {
+	r := []rune(s)
+	for i := 0; i < len(r); i++ {
+		if r[i] >= 'a' && r[i] <= 'z' {
+			r[i] = 'a' + ( r[i] - 'a'  + 13 ) % 26
+		}	else if r[i] >= 'A' && r[i] <= 'Z' {
+			r[i] = 'A' + ( r[i] - 'A'  + 13 ) % 26
+		} 
+	}
+
+	return string(r)
+}
+
+// Decrypt the message with rot13
+func decrypt_rot13(s string) string {
+
+	return encrypt_rot13(s)
+
+}
+
+
+func encrypt_reverse(s string) string {
+	
+	for _, char := range s {
+		if char >= 'a' && char <= 'z' {
+			return 'z' - (char - 'a') % 26
+		} else if char >= 'A' && char <= 'Z'{
+			return 'Z' - (char - 'A') % 26
+		} else {
+			return char
+		}
+		result := char + strconv.Itoa(char)
+	}
+}
+
+
+
+func decrypt_reverse(s string) string {
+	return encrypt_reverse(s)
+}
 
 
