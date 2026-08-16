@@ -145,9 +145,9 @@ func decrypt_MorseCode(s string) string {
 		morse, found := morseToLetter[code] 
 		if found {
 			result = result + string(morse)
-		} else if code == " " {
-			result = result + "/ " 
-		}else {
+		} else if code == "/" {
+			result = result + " "
+		} else {
 			result = result + string(code)
 		}
 	}
