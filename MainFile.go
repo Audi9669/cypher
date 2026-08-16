@@ -77,16 +77,21 @@ func getInput() (toEncrypt bool, encoding string, message string){
 	cypherchoice := strings.TrimSpace(input)
 		if cypherchoice == "1" {
 			fmt.Println("You chose ROT13")
-			encoding = "rot13"
+			encoding = "1"
 		} else if cypherchoice == "2" {
 			fmt.Println("You chose Reverse")
-			encoding = "reverse"
+			encoding = "2"
 		} else if cypherchoice == "3" {
 			fmt.Println("You chose Morse")
-			encoding = "MorseCode"
+			encoding = "3"
 		} else {
 			fmt.Println("Invalid choice.")
-		}
+			return
+		} 
+	
+	fmt.Println("Write your message here:")
+	input, _ = text.ReadString('\n') 
+	message = strings.TrimSpace(input)
 	return
 }
 
@@ -119,7 +124,9 @@ func encrypt_MorseCode(s string) string {
 		morse, found:= LetterToMorse[char] 
 		if found { 
 			result = result + morse + " "
-		} else { 
+		} else if char == ' ' {
+			result = result + "/ " 
+		}else { 
 			result = result + string(char)
 		}
 	
@@ -138,7 +145,9 @@ func decrypt_MorseCode(s string) string {
 		morse, found := morseToLetter[code] 
 		if found {
 			result = result + string(morse)
-		} else {
+		} else if code == " " {
+			result = result + "/ " 
+		}else {
 			result = result + string(code)
 		}
 	}
