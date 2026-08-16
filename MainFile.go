@@ -32,7 +32,13 @@ func main() {
 		} else { 
 			result = decrypt_reverse(message)
 		}
-	} else { 
+	} else if encoding == "MorseCode" { 
+		if toEncrypt {
+			result = encrypt_MorseCode
+		} else {
+			result = decrypt_MorseCode
+		}
+	}else { 
 		fmt.Println("Unknow Cipher, please choose from list")
 	   return 
 	}	
@@ -60,10 +66,10 @@ func getInput() (toEncrypt bool, encoding string, message string){
 		
 		if choice == "1" {
 			fmt.Println("You chose to encrypt!\n")
-			toEncrpyt = true
+			toEncrypt = true
 		} else if choice == "2" {
 			fmt.Println("You chose to decrypt!\n")
-			toEncrpyt = false
+			toEncrypt = false
 		} else {
 			fmt.Println("Invalid choice.")
 			return
@@ -78,13 +84,13 @@ func getInput() (toEncrypt bool, encoding string, message string){
 	cypherchoice := strings.TrimSpace(input)
 		if cypherchoice == "1" {
 			fmt.Println("You chose ROT13")
-			
+			encoding = "rot13"
 		} else if cypherchoice == "2" {
 			fmt.Println("You chose Reverse")
-			
+			encoding = "reverse"
 		} else if cypherchoice == "3" {
 			fmt.Println("You chose Morse")
-			
+			encoding = "MorseCode"
 		} else {
 			fmt.Println("Invalid choice.")
 		}
