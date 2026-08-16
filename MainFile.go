@@ -19,24 +19,24 @@ func main() {
 	// result := "" other way to create a variable
 	var result string 
 	
-	if encoding == "rot13"{ 
+	if encoding == "1"{ 
 		if toEncrypt {
 			result = encrypt_rot13(message)
 		} else {
 			result = decrypt_rot13(message)
 		}
 
-	} else if encoding == "reverse" {
+	} else if encoding == "2" {
 		if toEncrypt {
 			result = encrypt_reverse(message)
 		} else { 
 			result = decrypt_reverse(message)
 		}
-	} else if encoding == "MorseCode" { 
+	} else if encoding == "3" { 
 		if toEncrypt {
-			result = encrypt_MorseCode
+			result = encrypt_MorseCode(message)
 		} else {
-			result = decrypt_MorseCode
+			result = decrypt_MorseCode(message)
 		}
 	}else { 
 		fmt.Println("Unknow Cipher, please choose from list")
@@ -46,13 +46,6 @@ func main() {
 
 }
 
-/*else if encoding == "MorseCode" {
-
-		if toEncrypt { 
-			result = encrypt_MorseCode(message)  
-		} else {
-			result = decrypt_MorseCode(message)
-		}*/
 
 
 func getInput() (toEncrypt bool, encoding string, message string){
@@ -171,7 +164,6 @@ return result
 
 } 
 
-// Decrypt the message with rot13
 func decrypt_rot13(s string) string {
 
 	return encrypt_rot13(s)
