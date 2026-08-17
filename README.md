@@ -6,20 +6,23 @@ Cypher Tool is a simple command-line tool used to **encrypt || decrypt text** us
 
 # Methods
 
-1) **Reverse Cipher** – Reverses the input text.
+1) **Reverse Cipher** – Reverses the input text by replacing each letter with the letter that appears the same distance from the end of the alphabet. For example, a becomes z, b becomes y, and c becomes x. This means each letter is transformed into its opposite letter in the alphabet, while keeping the same order of the text.
 
-  Ex. `hello` → `olleh`
+  Ex. `hello` → `svool`
 
-2) **ROT13 Cipher** – Moves each letter 13 positions in the alphabet.
+2. **ROT13 Cipher** – Replaces each letter with the letter that is 13 positions further along in the alphabet. Since the alphabet has 26 letters, applying ROT13 twice returns the original text. For example, `a` becomes `n`, `b` becomes `o`, and `c` becomes `p`.
 
-  Ex. `hello` → `uryyb`
+Ex. `hello` → `uryyb`
 
-3) **Morse Code** – Converts text to Morse code or Morse code back to text. Space are replaced with (/) when encrypting. 
 
-  Ex. `SOS` → `... --- ...`
+3. **Morse Code** – Converts text into a series of dots (`.`) and dashes (`-`) that represent each letter, number, or symbol. When encrypting, spaces between words are replaced with a slash (`/`) to make it clear where one word ends and another begins. It can also convert Morse code back into normal text.
+
+Ex. `SOS` → `... --- ...`
+
   
-Note for the **Morse Code** , you must know morse code :))) 
-If you dont we added the a guideline for each one of the letters at the end 
+Note for the **Morse Code** , you must know morse code when decrypting :))) 
+If you dont know how,w we added the a guideline for each one of the letters at the end 
+
 # How Does It Work?
 
 1. Get input from the user.
@@ -30,7 +33,7 @@ If you dont we added the a guideline for each one of the letters at the end
 
 # How to Run
 
-Make sure Go is installed, then run:
+Make sure Go is installed, then run in Terminal:
 
 go run cyphertool.go
 
