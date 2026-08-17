@@ -54,7 +54,7 @@ func getInput() (toEncrypt bool, encoding string, message string){
 	fmt.Println("Select operation (1/2):")
 	fmt.Println("1. Encrypt.")
 	fmt.Println("2. Decrypt.")
-	input, _ := text.ReadString('\n')
+	input, _ := text.ReadString('\n') // reads users input until Enter
 	choice := strings.TrimSpace(input)
 		
 		if choice == "1" {
@@ -139,7 +139,7 @@ return result
 
 func decrypt_MorseCode(s string) string {
 
-	sliced := strings.Split(s," ")
+	sliced := strings.Split(s," ") // split based  on space
 	result := ""
 	for _, code := range sliced { 
 		morse, found := morseToLetter[code] 

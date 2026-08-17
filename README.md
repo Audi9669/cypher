@@ -2,7 +2,7 @@
 
 # Overview
 
-Cypher Tool is a simple command-line tool used to **encrypt || decrypt text** using different methods.
+Cypher Tool is a simple tool used to **encrypt || decrypt** text using different ciphering methods. It allows to type a message and you will get a secret message.
 
 # Methods
 
@@ -17,11 +17,13 @@ Ex. `hello` → `uryyb`
 
 3. **Morse Code** – Converts text into a series of dots (`.`) and dashes (`-`) that represent each letter, number, or symbol. When encrypting, spaces between words are replaced with a slash (`/`) to make it clear where one word ends and another begins. It can also convert Morse code back into normal text.
 
-Ex. `SOS` → `... --- ...`
+Ex. HELLO WORLD
+		↓
+.... . .-.. .-.. --- / .-- --- .-. .-.. -..
 
   
 Note for the **Morse Code** , you must know morse code when decrypting :))) 
-If you dont know how,w we added the a guideline for each one of the letters at the end 
+If you dont know how, we added the a guideline for each one of the letters at the end 
 
 # How Does It Work?
 
@@ -31,11 +33,14 @@ If you dont know how,w we added the a guideline for each one of the letters at t
 4. Process the input.
 5. Return the result to the user.
 
+**NOTES** : The program only accepts letters, any other characters will not be ciphered. 
 # How to Run
 
 Make sure Go is installed, then run in Terminal:
+if not visit the link : https://go.dev/doc/install 
 
-go run cyphertool.go
+then you can run the following line in Terminal (To open terminal type CMD in search)
+go run CypherTool.go
 
 
 Follow the prompts shown in the terminal to choose the task, method, and input.
@@ -54,7 +59,9 @@ Follow the prompts shown in the terminal to choose the task, method, and input.
 	'y': "-.--", 'z': "--.." 
 	
 Example 
-SOS → ... --- ...
+HELLO WORLD
+↓
+.... . .-.. .-.. --- / .-- --- .-. .-.. -..
 
 
 # CopyRights ByteBreakers (Brent, Sami, Oday) 2026 
